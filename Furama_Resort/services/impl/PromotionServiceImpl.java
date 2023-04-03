@@ -19,8 +19,9 @@ public class PromotionServiceImpl implements IPromotionService {
     }
 
     @Override
-    public void add() {
+    public Integer add() {
 
+        return null;
     }
 
     @Override

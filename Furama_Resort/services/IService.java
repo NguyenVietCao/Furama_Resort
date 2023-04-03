@@ -2,7 +2,7 @@ package services;
 
 public interface IService {
     void display();
-    void add();
+    Integer add();
     void edit();
     void delete();
     void returnMainMenu();

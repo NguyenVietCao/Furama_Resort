@@ -42,83 +42,105 @@ public class FuramaController {
                     promotionManagement();
                     break;
                 case 6:
+                    check=false;
                     break;
                 default:
-                    System.out.printf("Bạn nhập sai xin mời nhập lại");
+                    System.out.println("Bạn nhập sai xin mời nhập lại");
             }
 
         } while (check);
     }
 
     public static void employeeManager(){
-        System.out.println("1. Add Employee." +
-                "\n2. Edit Employee." +
-                "\n3. Delete Employee." +
-                "\n4. Display Employee." +
-                "\n5. Return Menu.");
-        String choose = scanner.nextLine();
-        switch (choose) {
-            case "1":
-                employeeService.addNewEmployee();
-            case "2":
-                employeeService.editEmployee();
-            case "3":
-                employeeService.delete();
-            case "4":
-                employeeService.displayListEmployees();
-            case "5":
-                employeeService.returnMainMenu();
-            default:
-                System.out.println("Mời bạn chọn lại");
-        }
+        Boolean check = true;
+        do {
+            System.out.println("1. Add Employee." +
+                    "\n2. Edit Employee." +
+                    "\n3. Delete Employee." +
+                    "\n4. Display Employee." +
+                    "\n5. Return Menu.");
+            String choose = scanner.nextLine();
+            switch (choose) {
+                case "1":
+                    employeeService.addNewEmployee();
+                    break;
+                case "2":
+                    employeeService.editEmployee();
+                    break;
+                case "3":
+                    employeeService.delete();
+                    break;
+                case "4":
+                    employeeService.displayListEmployees();
+                    break;
+                case "5":
+                    check = false;
+                    break;
+                default:
+                    System.out.println("Mời bạn chọn lại");
+                    break;
+            }
+        }while (check);
+
     }
 
     public static void customerManager(){
-        System.out.println("1. Add Customer."+
-                "\n2. Edit Customer."+
-                "\n3. Delete Customer."+
-                "\n4. Display Customer."+
-                "\n5. Return Menu.");
-        String choose = scanner.nextLine();
-        switch (choose){
-            case "1":
-                customerService.addNewCustomer();
-                break;
-            case "2":
-                customerService.editCustomer();
-                break;
-            case "3":
-                customerService.delete();
-                break;
-            case "4":
-                customerService.displayListCustomers();
-                break;
-            case "5":
-                customerService.returnMainMenu();
-                break;
-            default:
-                System.out.println("Mời bạn chọn lại");
-        }
+       Boolean check = true;
+       do {
+           System.out.println("1. Add Customer."+
+                   "\n2. Edit Customer."+
+                   "\n3. Delete Customer."+
+                   "\n4. Display Customer."+
+                   "\n5. Return Menu.");
+           String choose = scanner.nextLine();
+           switch (choose){
+               case "1":
+                   customerService.addNewCustomer();
+                   break;
+               case "2":
+                   customerService.editCustomer();
+                   break;
+               case "3":
+                   customerService.delete();
+                   break;
+               case "4":
+                   customerService.displayListCustomers();
+                   break;
+               case "5":
+                   check = false;
+                   break;
+               default:
+                   System.out.println("Mời bạn chọn lại");
+           }
+       }while (check);
 
     }
     public static void facilityManagement(){
-        System.out.println("1. Display list facility"+
-                "\n2. Add new facility."+
-                "\n3. Display list facility maintenance"+
-                "\n4. Return Menu");
-        String choose = scanner.nextLine();
-        switch (choose){
-            case "1":
-                facilityService.displayListFacility();
-            case "2":
-                facilityService.addNewFacility();
-            case "3":
-                facilityService.displayListFacilityMaintenance();
-            case "4":
-                facilityService.returnMainMenu();
-            default:
-                System.out.println("Mời nhập lại");
-        }
+        Boolean check = true;
+        do {
+            System.out.println("1. Display list facility" +
+                    "\n2. Add new facility." +
+                    "\n3. Display list facility maintenance" +
+                    "\n4. Return Menu");
+            String choose = scanner.nextLine();
+            switch (choose) {
+                case "1":
+                    facilityService.displayListFacility();
+                    break;
+                case "2":
+                    facilityService.addNewFacility();
+                    break;
+                case "3":
+                    facilityService.displayListFacilityMaintenance();
+                    break;
+                case "4":
+                    check = false;
+                    break;
+                default:
+                    System.out.println("Mời nhập lại");
+            }
+        }while (check) ;
+
     }
     public static void bookingManagement(){
         System.out.println("1. Add new booking."+

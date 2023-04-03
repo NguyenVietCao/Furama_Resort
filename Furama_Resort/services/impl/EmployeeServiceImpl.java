@@ -116,8 +116,9 @@ List<Employee> employees = new ArrayList<>();
     }
 
     @Override
-    public void add() {
+    public Integer add() {
 
+        return null;
     }
 
     @Override

@@ -6,9 +6,9 @@ public  abstract class Facility {
     //thuê, Số lượng người tối đa, Kiểu thuê (bao gồm thuê theo năm, tháng, ngày, giờ.
 
     private String serviceName;
-    private float usableArea;
-    private int rentalCosts;
-    private int maximumNumberOfPeople;
+    private String usableArea;
+    private String rentalCosts;
+    private String maximumNumberOfPeople;
     String rentalType;
 
     //Villa, House, Room.
@@ -17,11 +17,11 @@ public  abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String serviceName, float usableArea, int rentalCosts, int maximumNumberOfPeople, String rentalType) {
+    public Facility(String serviceName, String usableArea, String rentalCosts, String maximumNumberOfPeople, String rentalType) {
         this.serviceName = serviceName;
-        this.usableArea = usableArea;
-        this.rentalCosts = rentalCosts;
-        this.maximumNumberOfPeople = maximumNumberOfPeople;
+        this.usableArea = String.valueOf(usableArea);
+        this.rentalCosts = String.valueOf(rentalCosts);
+        this.maximumNumberOfPeople = String.valueOf(maximumNumberOfPeople);
         this.rentalType = rentalType;
     }
 
@@ -33,27 +33,27 @@ public  abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public float getUsableArea() {
+    public String  getUsableArea() {
         return usableArea;
     }
 
-    public void setUsableArea(float usableArea) {
+    public void setUsableArea(String usableArea) {
         this.usableArea = usableArea;
     }
 
-    public int getRentalCosts() {
+    public String getRentalCosts() {
         return rentalCosts;
     }
 
-    public void setRentalCosts(int rentalCosts) {
+    public void setRentalCosts(String rentalCosts) {
         this.rentalCosts = rentalCosts;
     }
 
-    public int getMaximumNumberOfPeople() {
+    public String getMaximumNumberOfPeople() {
         return maximumNumberOfPeople;
     }
 
-    public void setMaximumNumberOfPeople(int maximumNumberOfPeople) {
+    public void setMaximumNumberOfPeople(String maximumNumberOfPeople) {
         this.maximumNumberOfPeople = maximumNumberOfPeople;
     }
 
@@ -63,5 +63,16 @@ public  abstract class Facility {
 
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "serviceName='" + serviceName +
+                ", usableArea='" + usableArea +
+                ", rentalCosts='" + rentalCosts +
+                ", maximumNumberOfPeople='" + maximumNumberOfPeople +
+                ", rentalType='" + rentalType +
+                '}';
     }
 }

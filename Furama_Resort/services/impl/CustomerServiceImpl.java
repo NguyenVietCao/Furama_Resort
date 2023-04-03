@@ -41,10 +41,10 @@ public class CustomerServiceImpl implements ICustomerService {
         System.out.println("Nhập email của khách hàng:");
         String email = scanner.nextLine();
 
-        System.out.printf("Nhập loại khách hàng");
+        System.out.println("Nhập loại khách hàng");
         String customerType = scanner.nextLine();
 
-        System.out.printf("Nhập địa chỉ khách hàng:");
+        System.out.println("Nhập địa chỉ khách hàng:");
         String customerAddress = scanner.nextLine();
         Customer customer = new Customer(code, name, birthDay, gender, id, numberPhone, email, customerType, customerAddress);
         customers.add(customer);
@@ -114,8 +114,9 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public void add() {
+    public Integer add() {
 
+        return null;
     }
 
     @Override

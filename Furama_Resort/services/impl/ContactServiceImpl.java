@@ -9,8 +9,9 @@ public class ContactServiceImpl implements IContactService {
     }
 
     @Override
-    public void add() {
+    public Integer add() {
 
+        return null;
     }
 
     @Override
