@@ -26,9 +26,7 @@ public class RegEx {
     static final String ROOM_STANDARD_REGEX = "^[A-Z][a-z]+$";
     static final String BIRTHDAY_REGEX = "^(([0-2][0-9])||3[0-1])\\/(([0][0-9])||1[0-2])\\/((19((2[4-9])||([3-9][0-9])))||200[0-5])$";
 
-    static {
 
-    }
     public static boolean checkFacilityId(String facilityId){
           return   facilityId.matches(FACILITY_CODE_REGEX);
     }

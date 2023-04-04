@@ -1,6 +1,7 @@
 package services.impl;
 
 import models.person.Employee;
+import repository.EmployeeRepository;
 import services.IEmployeeService;
 import utils.ReadAndWrite;
 
@@ -10,12 +11,12 @@ import java.util.Scanner;
 
 public class EmployeeServiceImpl implements IEmployeeService {
 List<Employee> employees = new ArrayList<>();
+EmployeeRepository employeeRepository = new EmployeeRepository();
     @Override
     public void displayListEmployees() {
-        employees = ReadAndWrite.readEmployee();
+        employees = employeeRepository.displayEmployee();
         for (Employee e:employees) {
             System.out.println(e);
-
         }
     }
 
@@ -54,7 +55,7 @@ List<Employee> employees = new ArrayList<>();
 
         Employee employee = new Employee(code,name,birthDay,gender,id,numberPhone,email,employeeQualifications,employeePosition,employeeSalary);
         employees.add(employee);
-        ReadAndWrite.writeEmployeeToFile(employees);
+        employeeRepository.addEmployee(employee);
     }
 
     @Override
@@ -95,6 +96,7 @@ List<Employee> employees = new ArrayList<>();
 
                 Employee employee = new Employee(code,name,birthDay,gender,id,numberPhone,email,employeeQualifications,employeePosition,employeeSalary);
                 employees.set(i,employee);
+                employeeRepository.editEmployeeRepository(employees);
             }
 
         }

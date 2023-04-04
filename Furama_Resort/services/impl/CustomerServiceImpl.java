@@ -1,6 +1,7 @@
 package services.impl;
 
 import models.person.Customer;
+import repository.CustomerRepository;
 import services.ICustomerService;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 
 public class CustomerServiceImpl implements ICustomerService {
     static List<Customer> customers = new ArrayList<>();
+    CustomerRepository customerRepository = new CustomerRepository();
 
     @Override
     public void displayListCustomers() {
@@ -48,6 +50,8 @@ public class CustomerServiceImpl implements ICustomerService {
         String customerAddress = scanner.nextLine();
         Customer customer = new Customer(code, name, birthDay, gender, id, numberPhone, email, customerType, customerAddress);
         customers.add(customer);
+        customerRepository.addCustomer(customer);
+
     }
 
     @Override
@@ -57,7 +61,7 @@ public class CustomerServiceImpl implements ICustomerService {
         String id = scanner.nextLine();
         int count = 0;
         for (int i = 0; i < customers.size(); i++) {
-            if (id.equals(customers.get(i).getId())){
+            if (id.equals(customers.get(i).getId())) {
 
                 System.out.println("Nhập mã khách hàng:");
                 String code = scanner.nextLine();
@@ -83,17 +87,18 @@ public class CustomerServiceImpl implements ICustomerService {
                 System.out.printf("Nhập địa chỉ khách hàng:");
                 String customerAddress = scanner.nextLine();
 
-                Customer customer = new Customer(code,name,birthDay,gender,id,numberPhone,email,customerType,customerAddress);
-                customers.set(i,customer);
+                Customer customer = new Customer(code, name, birthDay, gender, id, numberPhone, email, customerType, customerAddress);
+                customers.set(i, customer);
 
-            }else {
+            } else {
                 count++;
             }
-            if (count == customers.size()){
+            if (count == customers.size()) {
                 System.out.println("Số chứng minh nhân dân của khách hàng không tồn tại");
             }
         }
     }
+
     @Override
 
     public void delete() {
