@@ -6,15 +6,15 @@ public class Employee extends Person {
 
  private String employeeQualifications;
  private  String employeePosition;
- private float employeeSalary;
+ private String employeeSalary;
 
- public Employee(String employeeQualifications, String employeePosition, float employeeSalary) {
+ public Employee(String employeeQualifications, String employeePosition, String employeeSalary) {
   this.employeeQualifications = employeeQualifications;
   this.employeePosition = employeePosition;
   this.employeeSalary = employeeSalary;
  }
 
- public Employee(String code, String name, String birthDay, String gender, String id, int numberPhone, String email, String employeeQualifications, String employeePosition, float employeeSalary) {
+ public Employee(String code, String name, String birthDay, String gender, String id, String numberPhone, String email, String employeeQualifications, String employeePosition, String employeeSalary) {
   super(code, name, birthDay, gender, id, numberPhone, email);
   this.employeeQualifications = employeeQualifications;
   this.employeePosition = employeePosition;
@@ -37,11 +37,11 @@ public class Employee extends Person {
   this.employeePosition = employeePosition;
  }
 
- public float getEmployeeSalary() {
+ public String getEmployeeSalary() {
   return employeeSalary;
  }
 
- public void setEmployeeSalary(float employeeSalary) {
+ public void setEmployeeSalary(String employeeSalary) {
   this.employeeSalary = employeeSalary;
  }
 
@@ -59,6 +59,18 @@ public class Employee extends Person {
           ", employeePosition='" + employeePosition + '\'' +
           ", employeeSalary=" + employeeSalary +
           '}';
+ }
+ public String getInformationToEmployeeCsv(){
+  return  this.getCode() +
+          "," + this.getName()  +
+          "," + this.getBirthDay()  +
+          "," + this.getGender() +
+          "," + this.getId()  +
+          "," + this.getNumberPhone() +
+          "," + this.getEmail() +
+          "," + employeeQualifications +
+          "," + employeePosition+
+          "," + employeeSalary;
  }
  //Lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giám
 //đốc.

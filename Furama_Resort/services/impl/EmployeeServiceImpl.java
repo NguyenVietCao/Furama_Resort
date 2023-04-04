@@ -2,6 +2,7 @@ package services.impl;
 
 import models.person.Employee;
 import services.IEmployeeService;
+import utils.ReadAndWrite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +12,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
 List<Employee> employees = new ArrayList<>();
     @Override
     public void displayListEmployees() {
+        employees = ReadAndWrite.readEmployee();
         for (Employee e:employees) {
             System.out.println(e);
+
         }
     }
 
@@ -35,7 +38,7 @@ List<Employee> employees = new ArrayList<>();
         String id = scanner.nextLine();
 
         System.out.println(" Nhập số điện thoại của Nhân viên :");
-        int numberPhone = Integer.parseInt(scanner.nextLine());
+        String numberPhone = scanner.nextLine();
 
         System.out.println("Nhập email của Nhân viên:");
         String email = scanner.nextLine();
@@ -47,10 +50,11 @@ List<Employee> employees = new ArrayList<>();
         String employeePosition = scanner.nextLine();
 
         System.out.println("Nhập lương nhân viên");
-        float employeeSalary = Integer.parseInt(scanner.nextLine());
+        String employeeSalary = scanner.nextLine();
 
         Employee employee = new Employee(code,name,birthDay,gender,id,numberPhone,email,employeeQualifications,employeePosition,employeeSalary);
         employees.add(employee);
+        ReadAndWrite.writeEmployeeToFile(employees);
     }
 
     @Override
@@ -75,7 +79,7 @@ List<Employee> employees = new ArrayList<>();
 
 
                 System.out.println(" Nhập số điện thoại của Nhân viên :");
-                int numberPhone = Integer.parseInt(scanner.nextLine());
+                String numberPhone = scanner.nextLine();
 
                 System.out.println("Nhập email của Nhân viên:");
                 String email = scanner.nextLine();
@@ -87,7 +91,7 @@ List<Employee> employees = new ArrayList<>();
                 String employeePosition = scanner.nextLine();
 
                 System.out.println("Nhập lương nhân viên");
-                float employeeSalary = Integer.parseInt(scanner.nextLine());
+                String employeeSalary = scanner.nextLine();
 
                 Employee employee = new Employee(code,name,birthDay,gender,id,numberPhone,email,employeeQualifications,employeePosition,employeeSalary);
                 employees.set(i,employee);

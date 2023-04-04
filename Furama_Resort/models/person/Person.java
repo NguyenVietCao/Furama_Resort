@@ -7,13 +7,13 @@ public abstract class Person {
     private String birthDay;
     private String gender;
     private String id;
-    private int numberPhone;
+    private String numberPhone;
     private String email;
 
     public Person() {
     }
 
-    public Person(String code, String name, String birthDay, String gender, String id, int numberPhone, String email) {
+    public Person(String code, String name, String birthDay, String gender, String id, String numberPhone, String email) {
         this.code = code;
         this.name = name;
         this.birthDay = birthDay;
@@ -63,11 +63,11 @@ public abstract class Person {
         this.id = id;
     }
 
-    public int getNumberPhone() {
+    public String getNumberPhone() {
         return numberPhone;
     }
 
-    public void setNumberPhone(int numberPhone) {
+    public void setNumberPhone(String numberPhone) {
         this.numberPhone = numberPhone;
     }
 

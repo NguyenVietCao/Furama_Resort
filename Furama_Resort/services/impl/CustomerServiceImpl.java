@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements ICustomerService {
         String id = scanner.nextLine();
 
         System.out.println(" Nhập số điện thoại của khách hàng :");
-        int numberPhone = Integer.parseInt(scanner.nextLine());
+        String numberPhone = scanner.nextLine();
 
         System.out.println("Nhập email của khách hàng:");
         String email = scanner.nextLine();
@@ -72,7 +72,7 @@ public class CustomerServiceImpl implements ICustomerService {
                 String gender = scanner.nextLine();
 
                 System.out.println(" Nhập số điện thoại của khách hàng :");
-                int numberPhone = Integer.parseInt(scanner.nextLine());
+                String numberPhone = scanner.nextLine();
 
                 System.out.println("Nhập email của khách hàng:");
                 String email = scanner.nextLine();
