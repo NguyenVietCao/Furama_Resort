@@ -57,7 +57,7 @@ public class FacilityServiceImpl implements IFacilityService {
                     break;
                 case 4:
 //                    returnMainMenu();
-                    check=false;
+                    check = false;
                     break;
 
                 default:
@@ -99,6 +99,12 @@ public class FacilityServiceImpl implements IFacilityService {
     public void returnMainMenu() {
 
     }
+
+    public static Facility applyInformation(String typeOf) {
+        Facility facility = new Facility();
+        return null;
+    }
+
 }
 
 

@@ -1,6 +1,6 @@
 package models.facility;
 
-public  abstract class Facility {
+public  class Facility {
 
     //Tên dịch vụ, Diện tích sử dụng, Chi phí
     //thuê, Số lượng người tối đa, Kiểu thuê (bao gồm thuê theo năm, tháng, ngày, giờ.

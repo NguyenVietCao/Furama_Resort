@@ -2,6 +2,7 @@ package services.impl;
 
 import models.facility.Room;
 import services.IRoomService;
+import utils.RegEx;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,21 +24,76 @@ public class RoomService extends FacilityServiceImpl implements IRoomService {
     @Override
     public Integer add() {
         super.add();
+        do {
+            System.out.println("Enter facility id: ");
+            String facilityId = scanner.nextLine();
+            if(RegEx.checkFacilityId(facilityId) == true) {
+                break;
+            } else {
+                System.out.println("Wrong Format, Please Type Again.");
+            }
+        } while (true);
         // , ,,, String freeServiceIncluded
-        System.out.println("Enter serviceName: ");
-        String serviceName = scanner.nextLine();
 
-        System.out.println("Enter usableArea");
-        String usableArea = scanner.nextLine();
+        //Kiểm tra tên dịch vụ:
+        String serviceName;
+        do {
+            System.out.println("Enter serviceName: ");
+            serviceName = scanner.nextLine();
+            if (RegEx.checkServiceName(serviceName) == true) {
+                break;
+            } else {
+                System.out.println("Wrong Format, Please Type Again.");
+            }
+        } while (true);
 
-        System.out.println("Enter rentalCosts:");
-        String rentalCosts = scanner.nextLine();
+        // Kiểm tra diện tích sử dụng:
+        String usableArea;
+        do {
+            System.out.println("Enter usableArea");
+            usableArea = scanner.nextLine();
+            if (RegEx.checkUseArea(usableArea) == true) {
+                break;
+            } else {
+                System.out.println("Wrong Format, Please Type Again.");
+            }
+        } while (true);
 
-        System.out.println("Enter maximumNumberOfPeople:");
-        String maximumNumberOfPeople = scanner.nextLine();
+        // Kiểm tra giá thuê:
+        String rentalCosts;
+        do {
 
-        System.out.println("Enter rentalType");
-        String rentalType = scanner.nextLine();
+            System.out.println("Enter rentalCosts:");
+            rentalCosts = scanner.nextLine();
+            if (RegEx.checkRentalCost(rentalCosts) == true) {
+                break;
+            } else {
+                System.out.println("Wrong Format, Please Type Again.");
+            }
+        } while (true);
+
+        // Kiểm tra số người:
+        String maximumNumberOfPeople ;
+        do {
+            System.out.println("Enter maximumNumberOfPeople:");
+            maximumNumberOfPeople = scanner.nextLine();
+            if (RegEx.checkMinMaxOfPeople(maximumNumberOfPeople) == true) {
+                break;
+            } else {
+                System.out.println("Wrong Format, Please Type Again.");
+            }
+        } while (true);
+
+        String rentalType;
+        do {
+            System.out.println("Enter rentalType:");
+            rentalType = scanner.nextLine();
+            if (RegEx.checkRentalType(rentalType) == true) {
+                break;
+            } else {
+                System.out.println("Wrong Format, Please Type Again.");
+            }
+        } while (true);
 
         System.out.println("Enter freeServiceIncluded");
         String freeServiceIncluded = scanner.nextLine();

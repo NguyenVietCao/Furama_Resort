@@ -42,9 +42,7 @@ public class BookingServiceImpl implements IBookingService {
         customerService.displayListCustomers();
         System.out.println("Nhập mã khách hàng:");
         String customerCode = scanner.nextLine();
-        for (int i = 0; i < ; i++) {
-            
-        }
+
         
 
         facilityService.displayListFacility();
